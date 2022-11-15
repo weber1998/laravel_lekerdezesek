@@ -6,6 +6,7 @@ use App\Http\Controllers\LendingController;
 use App\Http\Controllers\UserController;
 use App\Models\Lending;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\DB;
 
 /*
 |--------------------------------------------------------------------------
@@ -65,7 +66,7 @@ Route::post('/api/lendings', [LendingController::class, 'store']);
 Route::delete('/api/lendings/{user_id}/{copy_id}/{start}', [LendingController::class, 'destroy']);
 
 // 2
-Route::get('/api/lendings/hardcovered/{hardcovered}', [LendingController::class, 'hardcoveredBooks']);
+Route::get('/api/lendings/hardcovered/{hardcovered}', [CopyController::class, 'hardcoveredBooks']);
 
 // 3
 Route::get('/api/lendings/books_with_year/{year}', [BookController::class, 'yearBook']);

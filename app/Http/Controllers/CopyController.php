@@ -6,6 +6,7 @@ use App\Models\Book;
 use App\Models\Copy;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class CopyController extends Controller
 {
