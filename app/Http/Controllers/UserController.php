@@ -91,6 +91,7 @@ class UserController extends Controller
     public function LendingsWithU(){
         //$user = Auth::user();	//bejelentkezett felhasználó
         $users = User::with('lending_c')
+        ->whereRaw('name like "%m%"')
         ->get();
         return $users;
     }
